@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vôlei Feminino Brasil - Q&A com Busca Integrada</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="background-3d">
+        <div class="sphere sphere-1"></div>
+        <div class="sphere sphere-2"></div>
+        <div class="volleyball-3d">🏐</div>
+    </div>
+
+    <main class="modal-card">
+        <header class="modal-header">
+            <div class="badge">DuckDuckGo + Web Search</div>
+            <h1><i class="fa-solid fa-volleyball"></i> Perguntas & Respostas</h1>
+            <p>Sua dúvida é pesquisada na internet e a resposta é exibida diretamente nesta página.</p>
+        </header>
+
+        <section class="modal-body">
+            <form id="qa-form" class="input-group">
+                <input type="text" id="pergunta-input" placeholder="Ex: Quem é a capitã da Seleção Feminina?" required autocomplete="off">
+                <button type="submit" id="btn-enviar">
+                    <span>Buscar</span>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+
+            <div class="sugestoes">
+                <p>Sugestões rápidas:</p>
+                <div class="tags">
+                    <button class="tag-btn" onclick="preencherPergunta('Gabi Guimarães vôlei')">Gabi Guimarães</button>
+                    <button class="tag-btn" onclick="preencherPergunta('Técnico Zé Roberto Guimarães')">Zé Roberto Guimarães</button>
+                    <button class="tag-btn" onclick="preencherPergunta('Seleção Brasileira de Voleibol Feminino')">História da Seleção</button>
+                    <button class="tag-btn" onclick="preencherPergunta('Liga das Nações de Voleibol Feminino')">Liga das Nações</button>
+                </div>
+            </div>
+
+            <!-- Loader de Busca -->
+            <div id="loading" class="loading-container">
+                <div class="spinner"></div>
+                <p>Buscando resultados no DuckDuckGo...</p>
+            </div>
+
+            <!-- Modal / Caixa Interna da Resposta -->
+            <div class="resposta-box" id="resposta-box">
+                <div class="resposta-header">
+                    <h3><i class="fa-solid fa-robot"></i> Resultado Encontrado</h3>
+                    <button id="btn-audio" class="btn-audio" title="Ouvir por voz">
+                        <i class="fa-solid fa-volume-high"></i>
+                        <span>Ouvir Voz</span>
+                    </button>
+                </div>
+                
+                <p id="resposta-texto" class="resposta-texto">
+                    Sua resposta aparecerá aqui...
+                </p>
+
+                <div id="noticia-link-container" class="noticia-link-container">
+                    <span class="fonte-label">Fonte da notícia / artigo:</span>
+                    <a id="noticia-link" href="#" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-newspaper"></i> <span id="link-texto">Acessar matéria original</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
